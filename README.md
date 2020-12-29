@@ -1,6 +1,6 @@
 # Chatbot
 
-###Requiered
+### Requiere
 
 - tensorflow
 - numpy
