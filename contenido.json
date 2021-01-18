@@ -2,13 +2,78 @@
     "contenido": [
         {
             "tag": "saludo",
-            "patrones": ["Hola", "hello", "hi"],
-            "respuestas": ["Hola, ¿que tal?", "¿Como te va?", "Un gusto verte"]
-        }, 
+            "patrones": [
+                "Hola",
+                "Buenos días",
+                "Buenas noches",
+                "Buenas tardes"
+            ],
+            "respuestas": [
+                "Hola, ¿que tal?",
+                "¿Como te va?",
+                "Un gusto verte"
+            ]
+        },
+        {
+            "tag": "estar-preguntas",
+            "patrones": [
+                "¿Como estas?",
+                "¿Què tal?",
+                "¿Como te encuentras?",
+                "¿Como va tu día?",
+                "¿A ti como te va?"
+            ],
+            "respuestas": [
+                "Bien. Gracias",
+                "Un poco mal",
+                "Más o menos",
+                "He estado mejor",
+                "Excelente",
+                "No muy bien",
+                "Muy mal"
+            ]
+        },
+        {
+            "tag": "estar-bien",
+            "patrones": [
+                "Bien. Gracias",
+                "Un poco mal",
+                "Más o menos",
+                "Excelente"
+            ],
+            "respuestas": [
+                "Me alegro",
+                "Genial"
+            ]
+        },
+        {
+            "tag": "estar-mal",
+            "patrones": [
+                "Pff, me siento mal",
+                "Mal",
+                "Más o menos ):",
+                "Triste",
+                "Molesto"
+            ],  
+            "respuestas": [
+                "Chale, lo siento. ¿Te puedo ayudar con algo?",
+                "¿Quieres hablar de ello?"
+            ]
+        },
         {
             "tag": "despedida",
-            "patrones": ["Adios", "Hasta la proxima", "nos vemos"],
-            "respuestas": ["Cuidate", "Nos vemos pronto", "Te estaré esperando"]
+            "patrones": [
+                "Adiós",
+                "Adios",
+                "Hasta la proxima",
+                "Nos vemos",
+                "Bye"
+            ],
+            "respuestas": [
+                "Cuidate",
+                "Nos vemos pronto",
+                "Te estaré esperando"
+            ]
         }
     ]
 }
