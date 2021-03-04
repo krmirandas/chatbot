@@ -10,12 +10,18 @@ from nltk.stem.lancaster import LancasterStemmer  # Mas entendible
 from tensorflow.python.compiler.tensorrt import trt_convert as trt
 stemmer = LancasterStemmer()
 
+# MONGO
+
+from clasification import Clasification
+
+
 # nltk.download('punkt')
 
-key = 'ODAwNTY5NjE4MjYyNjU1MDE3.YAUCjg.cLhyKFrd4joSjKhdCODpUUtGV6I'
+key = ''
 
 with open("contenido.json", encoding='utf-8') as archivo:
     datos = json.load(archivo)
+# datos = Clasification.find()
 
 try:
     with open("variables.pickle", "rb") as archivoPickle:
@@ -71,7 +77,7 @@ except:
         pickle.dump((palabras, tags, entrenamiento, salida), archivoPickle)
 
 
-tensorflow.reset_default_graph()
+tensorflow.compat.v1.reset_default_graph()
 
 red = tflearn.input_data(shape=[None, len(entrenamiento[0])])
 red = tflearn.fully_connected(red, 100)
@@ -79,12 +85,11 @@ red = tflearn.fully_connected(red, 100)
 red = tflearn.fully_connected(red, len(salida[0]), activation="softmax")
 red = tflearn.regression(red)
 
+
 modelo = tflearn.DNN(red)
-try:
-    modelo.load("modelo.tflearn")
-except:
-    modelo.fit(entrenamiento, salida, n_epoch=1000, batch_size=10, show_metric=True)
-    modelo.save("modelo.tflearn")
+# modelo.load("modelo.tflearn")
+modelo.fit(entrenamiento, salida, n_epoch=1000, batch_size=10, show_metric=True)
+modelo.save("modelo.tflearn")
 
 
 def mainBot():
@@ -113,4 +118,6 @@ def mainBot():
                     respuesta = tagAux["respuestas"]
             await message.channel.send(random.choice(respuesta))
         client.run(key)
+
+
 mainBot()
