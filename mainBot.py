@@ -12,7 +12,7 @@ stemmer = LancasterStemmer()
 
 # nltk.download('punkt')
 
-key = ''
+key = 'ODAwNTY5NjE4MjYyNjU1MDE3.YAUCjg.cLhyKFrd4joSjKhdCODpUUtGV6I'
 
 with open("contenido.json", encoding='utf-8') as archivo:
     datos = json.load(archivo)
@@ -28,7 +28,7 @@ except:
 
     for contenido in datos["contenido"]:
         for patrones in contenido["patrones"]:
-            '''Diferencia entre tokenize y split 
+            '''Diferencia entre tokenize y split
             tokenize va a reconocer los puntos especiales automaticamente.
             En split se lo tienes que pasar
             '''
